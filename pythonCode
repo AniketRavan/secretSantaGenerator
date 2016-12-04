@@ -1,0 +1,22 @@
+# Code written by Aniket Ravan and Shashank Pant
+import random
+import os
+names = ["Aniket","Chinmayee","Devashree","Divyansh","Juhi","Mayank","Shashank"]
+secret_santa_names = ["Aniket","Chinmayee","Devashree","Divyansh","Juhi","Mayank","Shashank"]
+while 1:	
+	person = input("Enter your name: ")
+	flag = 0 
+#	print temp
+	if person in secret_santa_names:
+		flag = 1
+		del secret_santa_names[secret_santa_names.index(person)]
+	print secret_santa_names
+	rd = random.randrange(0,len(secret_santa_names))
+	print "You are " + secret_santa_names[rd] + " 's secret santa"
+	del secret_santa_names[secret_santa_names.index(secret_santa_names[rd])]
+	print secret_santa_names
+	if (flag == 1):
+		secret_santa_names.append(person)
+	print secret_santa_names
+	clear = input("Enter 0\n")
+	os.system('clear')	
